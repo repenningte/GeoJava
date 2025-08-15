@@ -39,7 +39,7 @@ public class GeoEspacial {
     public void Cilindro(){
         this.areaBase = this.pi * Math.pow(this.r, 2);
         this.areaLateral = 2 * this.pi * r *h;
-        this.volume = V = this.pi * Math.pow(this.r, 2) * h;
+        this.volume = this.pi * Math.pow(this.r, 2) * h;
 
     }
 
@@ -61,6 +61,13 @@ public class GeoEspacial {
         System.out.println(objCone.areaLateral);
         System.out.println(objCone.areaBase);
         System.out.println(objCone.volume);
+
+        GeoEspacial objCilindro = new GeoEspacial();
+        objCilindro.h = 3;
+        objCilindro.Cilindro():
+        System.out.println(objCilindro.areaLateral);
+        System.out.println(objCilindro.areaBase);
+        System.out.println(objCilindro.volume);
 
 
 	}
