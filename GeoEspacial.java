@@ -19,6 +19,13 @@ public class GeoEspacial {
     // cilindro
     public double V;
 
+    // troncos
+    public double R;
+    public double areaBaseMaior;
+    public double areaBaseMenor;
+    public double areaTotal;
+
+
     // construtor - execucao inicial
     public GeoEspacial(){
         this.pi = Math.PI;
@@ -40,7 +47,18 @@ public class GeoEspacial {
         this.areaBase = this.pi * Math.pow(this.r, 2);
         this.areaLateral = 2 * this.pi * r *h;
         this.volume = this.pi * Math.pow(this.r, 2) * h;
+    }
 
+    public void TroncosCone(){
+        this.areaBaseMaior = this.pi * Math.pow(this.R, 2);
+        this.areaBaseMenor = this.pi * Math.pow(this.r, 2);
+        this.areaLateral = this.pi * g * (R + r);
+        this.areaTotal =  areaBaseMaior + areaBaseMenor + areaLateral;
+        this.volume = (1/3) * this.pi * h * (Math.pow(this.R, 2) + R * r + Math.pow(this.r, 2));
+    }
+
+    public void TroncosPiramide(){
+        this.volume = (1/3) * h * (areaBaseMaior + areaBaseMenor + Math.sqrt(areaBaseMaior * areaBaseMenor));
     }
 
     public static void main(String[] args) {
@@ -64,10 +82,21 @@ public class GeoEspacial {
 
         GeoEspacial objCilindro = new GeoEspacial();
         objCilindro.h = 3;
-        objCilindro.Cilindro():
+        objCilindro.Cilindro();
         System.out.println(objCilindro.areaLateral);
         System.out.println(objCilindro.areaBase);
         System.out.println(objCilindro.volume);
+
+        GeoEspacial objTroncosCone = new GeoEspacial();
+        objTroncosCone.R = 2;
+        objTroncosCone.TroncosCone();
+        System.out.println(objTroncosCone.areaBaseMaior);
+        System.out.println(objTroncosCone.areaBaseMenor);
+        System.out.println(objTroncosCone.areaLateral);
+        System.out.println(objTroncosCone.areaTotal);
+        System.out.println(objTroncosCone.volume);
+
+
 
 
 	}
