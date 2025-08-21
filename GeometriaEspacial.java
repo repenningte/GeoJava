@@ -3,6 +3,7 @@ import java.lang.Math;
 public class GeometriaEspacial {
 
     // atributos = variaveis matematicas
+
     // esfera
     public double r;
     public double c;
@@ -32,6 +33,20 @@ public class GeometriaEspacial {
     public double areaBaseMaiorTronco;
     public double areaBaseMenorTronco;
 
+    // piramide
+    public double n;
+    public double b;
+    public double ap;
+    public double areaTotalPiramide;
+    public double areaLateralPiramide;
+    public double volumePiramide;
+
+    // prismas
+    public double P;
+    public double areaLateralPrisma;
+    public double areaTotalPrismas;
+    public double volumePrisma;
+
 
 
     // construtor - execucao inicial
@@ -56,6 +71,7 @@ public class GeometriaEspacial {
         this.areaLateral = 2 * this.pi * r *h;
         this.volume = this.pi * Math.pow(this.r, 2) * h;
     }
+
     public void TroncoDeCone(){
         this.areaBaseMaiorTronco = this.pi * Math.pow(this.R, 2);
         this.areaBaseMenorTronco = this.pi * Math.pow(this.r, 2);
@@ -64,6 +80,7 @@ public class GeometriaEspacial {
         this.areaTotalTronco = this.areaBaseMaiorTronco + this.areaBaseMenorTronco + this.areaLateralTronco;
         this.volumeTronco = (1.0/3.0) * this.pi * this.h * (Math.pow(this.R, 2) - Math.pow(this.r, 2));
     }
+
     public void TroncoDePiramide(){
         this.areaBaseMaiorTronco = Math.pow(this.R, 2);
         this.areaBaseMenorTronco = Math.pow(this.r, 2);
@@ -73,59 +90,16 @@ public class GeometriaEspacial {
         this.volumeTronco = (1.0/3.0) * this.h * (Math.pow(this.R, 2) - Math.pow(this.r, 2));
     }
 
+    public void Piramide(){
+        this.areaTotalPiramide = (n * b * ap) / 2;
+        this.areaTotalPiramide = this.areaLateralPiramide + this.areaBase;
+        this.volumePiramide = (1.0/3.0) * this.areaBase * h;
+    }
 
-    public static void main(String[] args) {
-		
-        // instancia a classe
-
-        GeometriaEspacial objEsfera = new GeometriaEspacial();
-        objEsfera.r = 4;
-        objEsfera.Esfera();
-        System.out.println(objEsfera.area);
-        System.out.println(objEsfera.volume);
-
-        GeometriaEspacial objCone = new GeometriaEspacial();
-        objCone.g = 5;
-        objCone.h = 3;
-        objCone.r = 2;
-        objCone.Cone();
-        System.out.println(objCone.areaLateral);
-        System.out.println(objCone.areaBase);
-        System.out.println(objCone.volume);
-
-        GeometriaEspacial objCilindro = new GeometriaEspacial();
-        objCilindro.h = 3;
-        objCilindro.Cilindro();
-        System.out.println(objCilindro.areaLateral);
-        System.out.println(objCilindro.areaBase);
-        System.out.println(objCilindro.volume);
-
-        GeometriaEspacial objTroncoCone = new GeometriaEspacial();
-        objTroncoCone.R = 5;
-        objTroncoCone.r = 3;
-        objTroncoCone.h = 4;
-        objTroncoCone.TroncoDeCone();
-        System.out.println(objTroncoCone.areaBaseMaiorTronco);
-        System.out.println(objTroncoCone.areaBaseMenorTronco);
-        System.out.println(objTroncoCone.areaBaseTronco);
-        System.out.println(objTroncoCone.areaLateralTronco);
-        System.out.println(objTroncoCone.areaTotalTronco);
-        System.out.println(objTroncoCone.volumeTronco);
-        
-        GeometriaEspacial objTroncoPiramide = new GeometriaEspacial();
-        objTroncoPiramide.R = 5;
-        objTroncoPiramide.r = 3;
-        objTroncoPiramide.h = 4;
-        objTroncoPiramide.TroncoDePiramide();
-        System.out.println(objTroncoPiramide.areaBaseMaiorTronco);
-        System.out.println(objTroncoPiramide.areaBaseMenorTronco);
-        System.out.println(objTroncoPiramide.areaBaseTronco);
-        System.out.println(objTroncoPiramide.areaLateralTronco);
-        System.out.println(objTroncoPiramide.areaTotalTronco);
-        System.out.println(objTroncoPiramide.volumeTronco);
-
-
-
-	}
+    public void Prisma(){
+        this.areaLateralPrisma = P * h;
+        this.areaTotalPrismas = this.areaLateralPrisma + 2 * this.areaBase;
+        this.volume = this.areaBase * h;
+    }
 
 }
