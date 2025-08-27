@@ -76,7 +76,7 @@ public class GeometriaEspacial {
         this.areaBaseMaiorTronco = this.pi * Math.pow(this.R, 2);
         this.areaBaseMenorTronco = this.pi * Math.pow(this.r, 2);
         this.areaBaseTronco = this.areaBaseMaiorTronco + this.areaBaseMenorTronco;
-        this.areaLateralTronco = this.pi * (this.R, this.r * g);
+        this.areaLateralTronco = this.pi * (this.R+ this.r * g);
         this.areaTotalTronco = this.areaBaseMaiorTronco + this.areaBaseMenorTronco + this.areaLateralTronco;
         this.volumeTronco = (1.0/3.0) * this.pi * this.h * (Math.pow(this.R, 2) - Math.pow(this.r, 2));
     }
@@ -85,7 +85,7 @@ public class GeometriaEspacial {
         this.areaBaseMaiorTronco = Math.pow(this.R, 2);
         this.areaBaseMenorTronco = Math.pow(this.r, 2);
         this.areaBaseTronco = this.areaBaseMaiorTronco + this.areaBaseMenorTronco;
-        this.areaLateralTronco = (this.R, this.r) * this.g;
+        this.areaLateralTronco = (this.R+ this.r) * this.g;
         this.areaTotalTronco = this.areaBaseMaiorTronco + this.areaBaseMenorTronco + this.areaLateralTronco;
         this.volumeTronco = (1.0/3.0) * this.h * (Math.pow(this.R, 2) - Math.pow(this.r, 2));
     }
