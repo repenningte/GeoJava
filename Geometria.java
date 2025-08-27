@@ -1,4 +1,5 @@
-class Geometria{
+public class Geometria{
+
 
 public static void main(String[] args) {
 		
@@ -66,9 +67,4 @@ public static void main(String[] args) {
         System.out.println(objPrisma.areaTotalPrismas);
         System.out.println(objPrisma.volumePrisma);
 
-
-
-
-
-	}
-}
+        }
