@@ -19,18 +19,25 @@ public class Geometria {
                 System.out.println(objEsfera.volume);
         }
 
+
         public static void Cone(){
-                 GeometriaEspacial objCone = new GeometriaEspacial();
-                 objCone.
-
-                 System.out.println(objCone.areaLateral);
+                GeometriaEspacial objCone = new GeometriaEspacial();
+                Scanner ler = new Scanner(System.in);
+                System.out.println("Digite o raio do Cone: ");
+                System.out.println("Digite a geratriz do cone: ");
+                System.out.println("Digite a altura do cone: ");
+                objCone.r = ler.nextDouble();
+                objCone.g = ler.nextDouble();
+                objCone.h = ler.nextDouble();
+                objCone.Cone();
+                System.out.println(objCone.areaBase);
+                System.out.println(objCone.areaLateral);
+                System.out.println(objCone.volume);
+                 
+                
         }
 
-        public static void main(String[] args) {
-                System.out.println("Oieee Rapha!");            
+        
 
-                Geometria objGeo = new Geometria();
-                objGeo.Esfera();
-        }
-
+        
 }
